@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './components/home';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-// import 'bootstrap/dist/css/bootstrap.css';
 import './style/main.scss';
+
+import Home from './components/home';
+import Results from './components/results';
 
 
 function main() {
@@ -18,7 +19,7 @@ function main() {
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/results" component={Home} />
+                    <Route exact path="/results" component={Results} />
                 </Switch>
             </BrowserRouter>
         </Provider>
