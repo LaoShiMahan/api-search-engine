@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Logo from './logo';
+import SearchBar from './searchBar';
+import RecentPosts from './recentPosts';
 
 class Home extends Component {
     render() {
@@ -7,6 +9,8 @@ class Home extends Component {
             <div className='home'>
                 <div>
                     <Logo />
+                    <SearchBar />
+                    <RecentPosts />
                 </div>
             </div>
         );
