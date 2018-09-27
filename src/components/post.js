@@ -18,19 +18,56 @@ class Post extends Component {
     }
 
     renderLinks = (type) => {
-        let links = this.props.post_links.map((link, index) => {
-            return (
-                <div className={ `${ type }-post__link` } key={ index }>
-                    <div className={ `${ type }-post__link-box` }>
-                        <img src="https://via.placeholder.com/70x70" />
+        let { post_links } = this.props;
+        let links;
+
+        if (post_links.length === 0) {
+            links = <div className="no-content">No Post Links</div>
+            return links
+        } else {
+            links = post_links.map((link, index) => {
+                return (
+                    <div className={ `${ type }-post__link` } key={ index }>
+                        <div className={ `${ type }-post__link-box` }>
+                            <img src="https://via.placeholder.com/70x70" />
+                        </div>
+                        <div className={ `${ type }-post__link-url` }>
+                            <a href={ link.link_url }>{ this.getNameForPostLink(link.link_url) }</a>
+                        </div>
                     </div>
-                    <div className={ `${ type }-post__link-url` }>
-                        <a href={ link.link_url }>Related Link #{ index + 1 }</a>
-                    </div>
-                </div>
-            );
-        });
-        return links;
+                );
+            });
+            return links;
+        }
+    }
+
+    getNameForPostLink = (linkUrl) => {
+        let indexStart = linkUrl.lastIndexOf("/") + 1;
+        let indexEnd = linkUrl.length;
+
+        if (indexStart === indexEnd) {
+            linkUrl = linkUrl.slice(0, indexStart - 1);
+            indexStart = linkUrl.lastIndexOf("/") + 1;
+            indexEnd = linkUrl.length;
+        }
+
+        if (linkUrl.includes(".html")) {
+            linkUrl = linkUrl.slice(0, indexEnd - 5);
+            indexEnd = linkUrl.length;
+        }
+
+        if (linkUrl.endsWith(".htm") || linkUrl.endsWith(".org")) {
+            linkUrl = linkUrl.slice(0, indexEnd - 4);
+            indexEnd = linkUrl.length;
+        }
+
+        let linkUrlDescription = linkUrl.substring(indexStart, indexEnd);
+
+        let formattedLinkUrlDescription = linkUrlDescription.split("-").map(word => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join(" ");
+
+        return formattedLinkUrlDescription;
     }
 
     render() {

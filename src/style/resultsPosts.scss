@@ -53,8 +53,9 @@
 
     &__link {
         display: flex;
+        flex-basis: 205px;
         min-height: 70px;
-        margin-right: 16px;
+        margin-right: 37px;
     }
 
     &__link-box {
@@ -66,4 +67,10 @@
         font-size: 14px;
         line-height: 17px;
     }
+}
+
+.no-content {
+    color: $color-gray-one;
+    font-size: 14px;
+    line-height: 17px;
 }
