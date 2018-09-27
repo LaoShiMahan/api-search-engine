@@ -5,6 +5,7 @@ class Post extends Component {
     constructor() {
         super()
         this.state = {
+            duration: 500,
             height: 0
         }
     }
@@ -47,23 +48,25 @@ class Post extends Component {
         } else if(this.props.type === "results") {
             return (
                 <li className="results-post">
-                    <div className="results-topics">
+                    <div className="results-post__topics">
                         { this.renderTopics() }
                     </div>
-                    <div className="results-post__title">
-                        <a
-                            href={this.props.url_for_post}
-                            onMouseEnter={ () => this.setState({ height: "auto" })}
-                            onMouseLeave={ () => this.setState({ height: 0 })}
-                        >
-                            { this.props.title }
-                        </a>
-                    </div>
-                    <AnimateHeight duration={ 500 } height={ this.state.height }>
-                        <div className="results-post__links">
-                            { this.renderLinks() }
+                    <div
+                        className="results-post__hover"
+                        onMouseEnter={ () => this.setState({ height: "auto" })}
+                        onMouseLeave={ () => this.setState({ height: 0 })}
+                    >
+                        <div className="results-post__title">
+                            <a href={this.props.url_for_post}>
+                                { this.props.title }
+                            </a>
                         </div>
-                    </AnimateHeight>
+                        <AnimateHeight duration={ this.state.duration } height={ this.state.height }>
+                            <div className="results-post__links">
+                                { this.renderLinks() }
+                            </div>
+                        </AnimateHeight>
+                    </div>
                 </li>
             );
         } else {
