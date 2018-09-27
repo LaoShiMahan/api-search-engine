@@ -1,3 +1,5 @@
 .results {
     @include default-page-layout;
+    margin-top: 52px;
+    grid-row-gap: 44px;
 }

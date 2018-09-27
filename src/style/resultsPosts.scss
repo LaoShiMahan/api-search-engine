@@ -1,7 +1,4 @@
 .results-posts {
-    display: grid;
-    justify-items: center;
-    align-content: center;
 
     &__wrapper {
         display: grid;
@@ -9,16 +6,10 @@
         width: 100%;
     }
 
-    &__heading {
-        color: $color-blue-one;
-        font-size: 16px;
-    }
-
     &__posts {
         display: grid;
-        justify-content: space-evenly;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 42px;
+        justify-content: stretch;
+        grid-row-gap: 21px;
     }
 
     ul {
@@ -29,9 +20,12 @@
 }
 
 .results-post {
+    display: grid;
+    align-content: space-around;
+    grid-row-gap: 21px;
 
     &__title {
-        font-size: 16px;
+        font-size: 18px;
 
         a {
             color: $color-gray-one;
@@ -39,16 +33,17 @@
         }
     }
 
-    &__topics {
-
-    }
-
-    &__topic {
-        color: $color-gray-two;
+    &__topics > * {
+        color: $color-blue-one;
         font-size: 14px;
+        line-height: 17px;
         font-weight: bold;
         text-align: left;
         margin-right: 8px;
+    }
+
+    &__topic {
+        
     }
 
     &__link {

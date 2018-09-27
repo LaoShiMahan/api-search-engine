@@ -11,8 +11,6 @@
             box-shadow: 2px 3px 20px 1px rgba(0, 0, 0, 0.1);
             border: 2px solid transparent;
             border-radius: 5px;
-            height: 118px;
-            font-size: 40px;
             transition: all 0.2s ease;
     
             &::placeholder {
@@ -33,6 +31,20 @@
             color: $color-gray-two;
         }
     }
-
     
+    &__home {
+
+        input {
+            height: 118px;
+            font-size: 40px;
+        }
+    }
+
+    &__results {
+
+        input {
+            height: 36px;
+            font-size: 22px;
+        }
+    }
 }
