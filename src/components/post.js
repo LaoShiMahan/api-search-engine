@@ -22,7 +22,7 @@ class Post extends Component {
             return (
                 <div className={ `${ type }-post__link` } key={ index }>
                     <div className={ `${ type }-post__link-box` }>
-
+                        <img src="https://via.placeholder.com/70x70" />
                     </div>
                     <div className={ `${ type }-post__link-url` }>
                         <a href={ link.link_url }>Related Link #{ index + 1 }</a>
@@ -49,15 +49,15 @@ class Post extends Component {
             );
         } else if(this.props.type === "results") {
             return (
-                <li className="results-post">
-                    <div className="results-post__topics">
-                        { this.renderTopics() }
-                    </div>
-                    <div
+                <div
                         className="results-post__hover"
                         onMouseEnter={ () => this.setState({ height: "auto" })}
                         onMouseLeave={ () => this.setState({ height: 0 })}
                     >
+                    <li className="results-post">
+                        <div className="results-post__topics">
+                            { this.renderTopics() }
+                        </div>
                         <div className="results-post__title">
                             <a href={this.props.url_for_post}>
                                 { this.props.title }
@@ -65,11 +65,11 @@ class Post extends Component {
                         </div>
                         <AnimateHeight duration={ this.state.duration } height={ this.state.height }>
                             <div className="results-post__links">
-                                { this.renderLinks() }
+                                { this.renderLinks("results") }
                             </div>
                         </AnimateHeight>
-                    </div>
-                </li>
+                    </li>
+                </div>
             );
         } else {
             return "";

@@ -46,15 +46,24 @@
         
     }
 
-    &__link {
+    &__links {
+        display: flex;
+        min-height: 70px;
+    }
 
+    &__link {
+        display: flex;
+        min-height: 70px;
+        margin-right: 16px;
     }
 
     &__link-box {
-
+        margin-right: 16px;
     }
 
-    &_link-url {
-
+    &__link-url a {
+        color: $color-gray-one;
+        font-size: 14px;
+        line-height: 17px;
     }
 }
