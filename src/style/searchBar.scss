@@ -37,6 +37,17 @@
         input {
             height: 118px;
             font-size: 40px;
+            
+
+            @media screen and (max-width: 700px) {
+                font-size: 29px;
+                height: 80px;
+            }
+
+            @media screen and (max-width: 550px) {
+                font-size: 18px;
+                height: 59px;
+            }
         }
     }
 
