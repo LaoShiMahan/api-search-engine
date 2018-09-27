@@ -11,6 +11,7 @@
 
     &__heading {
         color: $color-blue-one;
+        font-size: 16px;
     }
 
     &__posts {
@@ -28,7 +29,37 @@
 }
 
 .recent-post {
+
+    &__title {
+        font-size: 16px;
+
+        a {
+            color: $color-gray-one;
+            text-decoration: none;
+        }
+    }
+
+    &__topics {
+
+    }
+
     &__topic {
-        margin: 0 4px;
+        color: $color-gray-two;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        margin-right: 8px;
+    }
+
+    &__link {
+
+    }
+
+    &__link-box {
+
+    }
+
+    &_link-url {
+
     }
 }
