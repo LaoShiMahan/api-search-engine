@@ -11,6 +11,9 @@
     "precommit": "eslint src",
     "prod": "NODE_ENV=production node server.js"
   },
+  "engines": {
+    "node": "10.8.0"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:bottega-code-school/js-builder.git"
