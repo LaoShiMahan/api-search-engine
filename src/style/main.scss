@@ -1,5 +1,7 @@
 @import 'variables';
+@import 'logo';
 @import 'searchBar';
+@import 'recentPosts';
 
 html {
     font-size: 62.5%; // 1rem is 10px
@@ -32,25 +34,8 @@ body {
 .home {
     margin-top: 2rem;
     display: grid;
-    justify-items: center;
+    justify-items: stretch;
     align-content: space-around;
     height: 100vh;
     width: 66vw;
 }
-
-.logo {
-
-    &__main {
-
-        img {
-            
-        }
-    }
-}
-
-.recent-post {
-    &__topic {
-        margin: 0 4px;
-    }
-}
-

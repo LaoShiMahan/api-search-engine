@@ -1,0 +1,10 @@
+.recent-posts {
+    display: grid;
+    justify-items: center;
+}
+
+.recent-post {
+    &__topic {
+        margin: 0 4px;
+    }
+}
