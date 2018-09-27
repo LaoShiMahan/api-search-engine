@@ -1,7 +1,11 @@
+@import 'mixins';
 @import 'variables';
+@import 'home';
 @import 'logo';
 @import 'searchBar';
 @import 'recentPosts';
+@import 'results';
+@import 'resultsPosts';
 
 html {
     font-size: 62.5%; // 1rem is 10px
@@ -29,12 +33,4 @@ body {
 .app-wrapper {
     display: grid;
     justify-content: center;
-}
-
-.home {
-    display: grid;
-    // justify-items: stretch;
-    align-content: space-around;
-    height: 100vh;
-    width: 66vw;
 }
